@@ -1,5 +1,6 @@
 # Smoke builds
 #
+#
 # The goal of this workflow is to finish as fast as possible. Therefore some
 # choices have been made:
 # - no optimizations
