@@ -163,7 +163,6 @@ jobs:
 
               - name: make build directory
                 run:  mkdir build
-                run:  mkdir build/CMakeFiles
               - name: configure
                 working-directory: build
                 run:  "../source/configure -cmake -opensource -confirm-license -ccache -no-pch
@@ -181,16 +180,6 @@ jobs:
                   ccache -x 2>/dev/null || true
                   ccache -z
 
-              - name: print logfiles and other info in case of failure
-                if: ${{ failure() }}
-                run: |
-                  echo ==== CMakeOutput.log ====
-                  cat build/CMakeFiles/CMakeOutput.log
-                  echo
-                  echo ==== CMakeError.log ====
-                  cat build/CMakeFiles/CMakeError.log
-                  echo ==== CMakeCache.txt ====
-                  cat build/CMakeCache.txt
 
       - name: Run sonar-scanner
         env:
