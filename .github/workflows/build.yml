@@ -163,6 +163,7 @@ jobs:
 
               - name: make build directory
                 run:  mkdir build
+                run:  mkdir build/CMakeFiles
               - name: configure
                 working-directory: build
                 run:  "../source/configure -cmake -opensource -confirm-license -ccache -no-pch
